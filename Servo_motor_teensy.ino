@@ -33,30 +33,30 @@ void servo_cb( const std_msgs::UInt16& cmd_msg){
   if ( cmd_msg.data == 1) //openning
   {
     for(int pos = closed; pos <= opens; pos += 1)// loop for speed controlfrom 180 to 100, or else the gears don't mesh well due to high speed.
-  {                                   
+    {                                   
     myservo.write(pos); 
     myservo1.write(pos);             
     delay(15);              
     if(pos == opens) // if the opening position is reached,break from the loop
-    {
+      {
       break;
-    }
-  } 
-  
+      }
+    } 
   }
 
+ 
   else if (cmd_msg.data == 0)//closing
   {
-    for(int pos = opens; pos >= closed; pos -= 1) //loop for closing from 180 to 100
-  {                                  
-    myservo.write(pos); 
-    myservo1.write(pos);             
-    delay(15); 
-    if(pos == closed) // if the closing position is reached, break from the loop
-    {
-      break;
-    }
-  } 
+     for(int pos = opens; pos >= closed; pos -= 1) //loop for closing from 180 to 100
+     {                                  
+       myservo.write(pos); 
+       myservo1.write(pos);             
+       delay(15); 
+       if(pos == closed) // if the closing position is reached, break from the loop
+        {
+          break;
+        }
+     } 
   }
   
                                                  }
