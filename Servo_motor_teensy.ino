@@ -1,7 +1,7 @@
 /*
  * rosserial Servo Control Example
  *
- * This sketch demonstrates the control of  R/C servos
+ * This sketch demonstrates the control of servos
  * using ROS Serial and Teensy 3.2
  * 
  * http://www.arduino.cc/en/Reference/Servo
@@ -25,7 +25,7 @@ int opens = 180; // opens to an angle of 180
 int closed = 100; // closes to an angle of 100
 
 Servo myservo;
-//Servo myservo1;
+Servo myservo1;
 
 //Callback function, if the topic data is 1(unlatch) then the servo motor opens.
 void servo_cb( const std_msgs::UInt16& cmd_msg){
@@ -71,7 +71,7 @@ void setup(){
   
   //pin layout for Teensy 3.2 (https://www.pjrc.com/teensy/pinout.html)
   myservo.attach(20); //attach it to pin 20 of Teesny
-  //myservo1.attach(22); //attach it to pin 22 of Teensy 
+  myservo1.attach(22); //attach it to pin 22 of Teensy 
   
   
 }
