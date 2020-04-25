@@ -1,14 +1,3 @@
-/*
- * rosserial Servo Control Example
- *
- * This sketch demonstrates the control of servos
- * using ROS Serial and Teensy 3.2
- * 
- * http://www.arduino.cc/en/Reference/Servo
- * 
- * 
- */
-
 #define USE_USBCON
 #if (ARDUINO >= 100)
  #include <Arduino.h>
